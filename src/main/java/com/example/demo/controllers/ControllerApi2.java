@@ -9,26 +9,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.objects.InputObject;
 import com.objects.OutputObject;
 import com.wordnik.swagger.annotations.Api;
+import com.wordnik.swagger.annotations.ApiOperation;
 
 @Controller
-@Api(tags="Customer Controller")
-public class ControllerSwagger {
+@Api(value = "Empollé", description = "REST API for Employee", tags = { "Employee" })
+public class ControllerApi2 {
 
-	@GetMapping("/api/index")
+	@GetMapping("/api2/index2")
 	@ResponseBody
 	public String index() {
 		return "holaasdasd";
 	}
 
-	
-	/// <summary>
-	/// This is method summary I want displayed
-	/// </summary>
-	/// <param name="guid">guid as parameter</param>
-	/// <param name="page_number">Page number - defaults to 0</param>
-	/// <returns>List of objects returned</returns>
-	@PostMapping("/api/postTesting")
+	@PostMapping("/api2/postTesting2")
 	@ResponseBody
+	@ApiOperation(notes = "Your Implementation Notes will show here", value = "asdasd")
 	public OutputObject postTesting(@RequestBody InputObject inputObject) {
 		return new OutputObject(inputObject.getParameter1(), false, null);
 	}

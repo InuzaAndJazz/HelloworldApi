@@ -9,21 +9,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.objects.InputObject;
 import com.objects.OutputObject;
 import com.wordnik.swagger.annotations.Api;
-import com.wordnik.swagger.annotations.ApiOperation;
 
 @Controller
-@Api(value = "Empollé", description = "REST API for Employee", tags = { "Employee" })
-public class ControllerSwagger2 {
+@Api(tags="Customer Controller")
+public class ControllerApi {
 
-	@GetMapping("/api/index2")
+	@GetMapping("/api/index")
 	@ResponseBody
 	public String index() {
 		return "holaasdasd";
 	}
 
-	@PostMapping("/api/postTesting2")
+	@PostMapping("/api/postTesting")
 	@ResponseBody
-	@ApiOperation(notes = "Your Implementation Notes will show here", value = "asdasd")
 	public OutputObject postTesting(@RequestBody InputObject inputObject) {
 		return new OutputObject(inputObject.getParameter1(), false, null);
 	}
